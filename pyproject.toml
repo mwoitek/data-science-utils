@@ -1,0 +1,9 @@
+[tool.black]
+line-length = 90
+target-version = ["py311"]
+
+[tool.isort]
+profile = "black"
+line_length = 90
+force_single_line = true
+treat_comments_as_code = ["# %%"]
