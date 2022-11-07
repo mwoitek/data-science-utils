@@ -58,6 +58,11 @@ def test_df_correct_percentages(simple_df: pd.DataFrame) -> None:
     assert np.allclose(percentages, expected_percentages)
 
 
+def test_df_only_non_zero(simple_df: pd.DataFrame) -> None:
+    df_counts_percentages = missing_values_df(simple_df, only_non_zero=True)
+    assert df_counts_percentages.shape[0] == 2
+
+
 def test_no_missing_false(simple_df: pd.DataFrame) -> None:
     assert not no_missing_value(simple_df)
 
