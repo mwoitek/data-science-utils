@@ -25,3 +25,10 @@ def missing_values_df(
             "Percentage": (100 * counts / df.shape[0]).round(decimals=places),
         }
     )
+
+
+def no_missing_value(df: pd.DataFrame) -> bool:
+    """Returns True if the DataFrame has no missing value. Otherwise, returns
+    False."""
+    number_missing = df.isna().sum()
+    return (number_missing == 0).all()
